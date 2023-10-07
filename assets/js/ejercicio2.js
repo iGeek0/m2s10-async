@@ -1,18 +1,22 @@
 console.log("Entro index.js");
 
+let loading = document.getElementById("loading");
+
 
 function saludar(texto, callback) {
     const textoMayusculas = texto.toUpperCase();
-    // .... pasan 1000 cosas mas...
-    callback("Hola: " + textoMayusculas);
+    setTimeout(()=>{
+        callback("Hola: " + textoMayusculas);
+    }, 4000);
 }
 
 function imprimir(parametro) {
     console.log(parametro);
+    console.log("Final");
+    loading.style.display = "none";
 }
 
 saludar("Jesus", imprimir);
 
-// imprimir("Imprimir 1");
-// imprimir("Imprimir 2");
-// imprimir("Imprimir 3");
+
+
